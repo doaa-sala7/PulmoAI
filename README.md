@@ -30,7 +30,7 @@
 - [X] CNN
 - [X] CNN-LSTM
 
-[![Models in action](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14DIYJ30PyZlVQ_BhqWmgYZJpkKpOYB4T?usp=sharing)
+[![Models in action](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1SPHSru68p8rQPxAGH6aYeywpwrjtjDs-?usp=sharing)
 
 
 - Extra-model
