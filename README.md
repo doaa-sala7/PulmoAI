@@ -1,4 +1,4 @@
-# Covid-pnemonia-detection
+<!-- # Covid-pnemonia-detection
  ## Objective :
  - Identify the presence of COVID-19 or Pneumonia in a patient using X-ray or CT-Scan images just after scanning the patient's chest.
  - Achieve State-of-the-art accuracy
@@ -42,4 +42,4 @@
 - [ ] CNN-wavelet-SE
 
 
-
+ -->
