@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pulmo Ai</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="HTML5 website template" />
+    <meta name="keywords" content="global, template, html, sass, jquery" />
+    <meta name="author" content="Bucky Maler" />
+    <link rel="stylesheet" href="../static/assets/css/main.css" />
+    <link rel="stylesheet" href="../static/assets/css/main-welcome.css" />
+    <link rel="stylesheet" href="../static/assets/css/demo.css" />
+    <link rel="stylesheet" href="../static/assets/css/signup.css" />
+    <link rel="stylesheet" href="../static/assets/css/theme.css" />
+    <link rel="stylesheet" href="../static/assets/css/gallery.css" />
+    <link rel="stylesheet" href="../static/assets/css/upload.css" />
+    <link rel="stylesheet" href="../static/assets/css/pulmoai.css" />
+    <link rel="stylesheet" href="../static/assets/css/transitions.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/simplebar/dist/simplebar.min.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='../static/assets/img/lungs.ico') }}"
+    />
+  </head>
+  <body class="fade-in">
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="/home.html">
+            <img src="../static/assets/img/lungs.ico" alt="Global" />
+            <p>Pulmo AI</p>
+          </a>
+          <!--<button class="header--cta cta">Hire Us</button>-->
+          <div class="view-theme">
+            <div class="light-dark">
+              <input type="checkbox" class="theme-switch" id="theme-switch" />
+              <label for="theme-switch" class="switch-label"></label>
+            </div>
+
+            <div class="profile-dropdown">
+              <img
+                src="static\assets\img\profile.png"
+                alt="Profile"
+                class="profile-icon"
+              />
+              <div class="dropdown-content">
+                <a href="#">{{name}}</a>
+                <a href="/logout">Log Out</a>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="gallery-main-div">
+          <div class="main-form-display">
+            <div class="form-header">
+              <div class="form-header-title">
+                <p class="welcome-text">Pulmo's Preview</p>
+              </div>
+              <div class="from-header-button">
+                <button
+                  class="juicy-button"
+                  onclick="window.location.href = '/cloud_gallery';"
+                >
+                  Back to Gallery
+                </button>
+              </div>
+            </div>
+            <form name="edit-form" action="/action" method="Post">
+              <div class="form-container">
+                <div class="right-block">
+                  <div class="info-div">
+                    <h2 class="info-title">Patient information</h2>
+                    <div class="patient-info">
+                      <label for="diagnose">Patient-diagnose</label>
+                      <p>{{requested_image_data['diagnose']}}</p>
+                    </div>
+                    <label for="description">Patient-Notes</label>
+                    <div class="patient-description">
+                      <p class="desc-text">
+                        {{requested_image_data['description']}}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="edit-form">
+                    <h2 class="info-title">Adjust Patient information</h2>
+
+                    <div class="re-diagnose">
+                      <label for="diagnose">diagnose with</label>
+                      <select name="diagnose" id="diagnose" value="diagnose">
+                        {% for element in diagnose_classes %} {% if element ==
+                        requested_image_data['diagnose'] %}
+                        <option value="{{element}}" selected>
+                          {{element}}
+                        </option>
+                        {% else %}
+                        <option value="{{element}}">{{element}}</option>
+                        {% endif %} {% endfor %}
+                      </select>
+                    </div>
+                    <div class="edit-description">
+                      <label for="description">Edit Notes</label>
+                      <textarea
+                        class="description-input"
+                        id="description"
+                        name="description"
+                        rows="10"
+                        placeholder="Enter description here..."
+                      >
+{{requested_image_data['description']}} </textarea
+                      >
+                    </div>
+                    <button
+                      name="action"
+                      value="Save"
+                      type="submit"
+                      class="juicy-button"
+                    >
+                      Save
+                    </button>
+                    <div class="edit-button"></div>
+                  </div>
+                </div>
+                <div class="left-block">
+                  <h2 class="middle-title">Patient Medical Image</h2>
+                  <div class="image-info">
+                    <label for="diagnose">Image type</label>
+                    <p class="image-type-class">
+                      {{requested_image_data['image_type']}}
+                    </p>
+                  </div>
+                  <div class="plot-image">
+                    <div id="image" class="plots-image"></div>
+                    <script type="text/javascript">
+                      var graphs = {{graphJSON|safe}};
+                      var image = {{imageJSON|safe}};
+                      Plotly.plot('chart', graphs, {});
+                      Plotly.plot('image', image, {});
+                    </script>
+                  </div>
+                </div>
+                <div class="middle-block">
+                  <h2 class="info-title">Diagnose with PulmoAI</h2>
+                  <div class="plot-block">
+                    <div class="plot-utils">
+                      <label for="diagnose">Select AI Model</label>
+                      <div class="buttons-section">
+                        <div class="model-dropdown">
+                          <select name="model" id="model">
+                            {% for key, value in models_pathes.items()%}
+                            {% if value == selected_model%}
+                            <option selected value="{{value}}">{{key}}</option>
+                            {% else %}
+                            <option value="{{value}}">{{key}}</option>
+                            {% endif %}
+                            {% endfor %}
+                          </select>
+                        </div>
+                        <div class="predict-button">
+                          <button
+                            name="action"
+                            value="predict"
+                            type="submit"
+                            class="juicy-button"
+                          >
+                            Predict
+                          </button>
+                        </div>
+                      </div>
+                      <h2 class="info-title">AI Diagnosis</h2>
+                      <div class="plots-graph">
+                        <div id="chart" class="plots-graph"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript">
+      var graphs = {{graphJSON|safe}};
+      var image = {{imageJSON|safe}};
+      Plotly.plot('chart', graphs, {});
+      Plotly.plot('image', image, {});
+    </script>
+    <script src="../static/assets/js/load_theme.js"></script>
+    <script src="../static/assets/js/theme.js"></script>
+  </body>
+</html>

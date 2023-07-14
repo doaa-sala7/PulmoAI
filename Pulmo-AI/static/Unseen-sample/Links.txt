@@ -1,0 +1,11 @@
+CT - Xray
+
+https://www.kaggle.com/datasets/luisblanche/covidct
+https://www.kaggle.com/datasets/anaselmasry/covid19normalpneumonia-ct-images
+https://www.kaggle.com/datasets/kingofarmy/covid19ct-scan-images
+https://www.kaggle.com/datasets/ssarkar445/covid-19-xray-and-ct-scan-image-dataset
+https://www.kaggle.com/datasets/plameneduardo/a-covid-multiclass-dataset-of-ct-scans
+https://www.kaggle.com/datasets/xuehaihe/covidct
+https://www.kaggle.com/datasets/ssarkar445/covid-19-xray-and-ct-scan-image-dataset
+https://www.kaggle.com/datasets/jtiptj/chest-xray-pneumoniacovid19tuberculosis
+https://www.kaggle.com/datasets/prashant268/chest-xray-covid19-pneumonia

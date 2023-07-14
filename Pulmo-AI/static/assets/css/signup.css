@@ -1,0 +1,159 @@
+/* :root {
+  --background_color: #0e3460;
+  --object_color: #3F72AF;
+  --font_color: #DBE2EF;
+  --highlighted_font_color: #F9F7F7;
+} */
+
+/* :root {
+  --background_color: #222831;
+  --object_color: #393E46;
+  --highlighted_font_color: #00ADB5;
+  --font_color: #EEEEEE;
+} */
+
+.signup {
+    width: 40%;
+    min-width: 400px;
+    max-width: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .25);
+
+    @media(max-width: 40em) {
+        width: 95%;
+        position: relative;
+        margin: 2.5% auto 0 auto;
+        left: 0%;
+        -webkit-transform: translate(0%, 0%);
+        -moz-transform: translate(0%, 0%);
+        -o-transform: translate(0%, 0%);
+        -ms-transform: translate(0%, 0%);
+        transform: translate(0%, 0%);
+    }
+}
+
+.signup b input label {
+    color: var(--highlighted_font_color)
+}
+
+* {
+    box-sizing: border-box
+}
+
+input {
+    color: var(--buttons_font_color);
+    background: var(--object_color)
+}
+
+/* Full-width input fields */
+input[type=text],
+input[type=password],
+input[type=email] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    /* background: var(--font_color); */
+    background: var(--input_label_background);
+    color: var(--input_label_color);
+}
+
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus {
+    background-color: var(--input_label_background);
+    color: var(--input_label_color);
+    outline: none;
+
+}
+
+
+input[type=text]::selection,
+input[type=email]::selection,
+input[type=password]::selection {
+    background-color: var(--highlighted_font_color);
+}
+
+
+hr {
+    border: 1px solid var(--highlighted_font_color);
+    margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: var(--object_color);
+    color: var(--font_color);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+/* Extra styles for the cancel button */
+.Loginbtn {
+    padding: 14px 20px;
+    background-color: var(--highlighted_font_color);
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.Loginbtn,
+.signupbtn {
+    float: left;
+    width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.clearfix button {
+    color: var(--buttons_font_color);
+    background-color: var(--object_color);
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+
+    .Loginbtn,
+    .signupbtn {
+        width: 100%;
+    }
+}
+
+input[type="checkbox"] {
+    accent-color: var(--highlighted_font_color);
+}
+
+.checkbox-signup {
+    margin-bottom: 15px;
+    background-color: var(--object_color);
+    color: var(--object_color);
+}
+
+.h1-title {
+    color: var(--highlighted_font_color);
+}

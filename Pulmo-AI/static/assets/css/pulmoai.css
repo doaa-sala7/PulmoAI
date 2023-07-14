@@ -1,0 +1,178 @@
+.form-header {
+  width: 100%;
+  margin: auto;
+}
+
+
+.form-header {
+  padding: 1%;
+  padding-bottom: 0%;
+  padding-top: 2.5%;
+  margin-top: 1%;
+}
+
+
+
+.form-container {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  gap: 2%;
+}
+
+
+.left-block,
+.middle-block,
+.right-block {
+  min-width: 32%;
+  max-width: 32%;
+  height: 73%;
+  float: left;
+}
+
+.left-block h2,
+.middle-block h2,
+.right-block h2 {
+  align-items: center;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.plot-utils {
+  width: 100%;
+}
+
+.edit-description {
+  display: inline-block;
+  width: 100%;
+  margin: auto;
+  padding: 1%;
+  padding-top: 3.5%;
+}
+
+
+/*####################### INFO-FROM-BLOCK #######################*/
+/*#* info div *#*/
+.info-div {
+  height: 57%;
+}
+
+.edit-from {
+  height: 43%;
+}
+
+.info-title {
+  padding-top: 0%;
+  margin-top: 0%;
+  margin-bottom: 1%;
+}
+
+
+.patient-info p {
+  background-color: var(--object_color);
+  color: var(--buttons_font_color);
+  padding: 1.3%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+  border-radius: 5px;
+}
+
+.patient-description p {
+  background-color: var(--object_color);
+  color: var(--buttons_font_color);
+  padding: 1.3%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+  border-radius: 5px;
+  overflow: hidden;
+  overflow: auto;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+
+
+
+.patient-description {
+  height: 96px;
+}
+
+.desc-text {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+
+.edit-description {
+  padding: 0%;
+}
+
+.edit-form {
+  margin-top: 4%;
+}
+
+/*####################### Image #######################*/
+
+
+.plot-image {
+  width: 100%;
+  height: 100%;
+  background-color: var(--object_color);
+  border-radius: 5px;
+  overflow: hidden;
+  overflow-y: auto;
+  text-overflow: ellipsis;
+  /* display: -ms-inline-grid; */
+  display: inline-grid;
+}
+
+.user-select-none {
+  width: 50%;
+}
+
+.middle-title {
+  margin-top: 0%;
+  margin-bottom: 1%;
+}
+
+.image-info p {
+
+  margin-top: 1%;
+  margin-bottom: 3%;
+  padding-bottom: 3%;
+  padding-left: 5%;
+  padding: 1.3%;
+  background-color: var(--object_color);
+  color: var(--buttons_font_color);
+  border-radius: 5px;
+}
+
+.description-input {
+  margin-bottom: 0%;
+}
+
+label {
+  font-size: 1.1em;
+}
+
+
+
+/*####################### PLot #######################*/
+.model-dropdown {
+  width: 100%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.plot-graph {
+  width: 100%;
+  height: 60%;
+  /* background-color: var(--object_color); */
+  border-radius: 5px;
+  overflow: hidden;
+  overflow-y: auto;
+  text-overflow: ellipsis;
+  /* display: -ms-inline-grid; */
+  display: inline-grid;
+}

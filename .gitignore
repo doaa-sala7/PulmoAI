@@ -1,0 +1,9 @@
+Pulmo-AI/Creds/firestore-creds.json
+Pulmo-AI/others
+Pulmo-AI/static/model
+Pulmo-AI/static/uploads/*.jpg
+Pulmo-AI/static/uploads/*.png
+Pulmo-AI/static/uploads/*.jpeg
+Pulmo-AI/__pycache__
+Pulmo-AI/.vscode
+Pulmo-AI/static/sample

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pulmo AI</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="HTML5 website template" />
+    <meta name="keywords" content="global, template, html, sass, jquery" />
+    <meta name="author" content="Bucky Maler" />
+    <link rel="stylesheet" href="../static/assets/css/main.css" />
+    <link rel="stylesheet" href="../static/assets/css/theme.css" />
+    <link rel="stylesheet" href="../static/assets/css/transitions.css" />
+    <link rel="stylesheet" href="../static/assets/css/viewer.css" />
+    <link rel="stylesheet" href="../static/assets/css/cool_buttons.css" />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='../static/assets/img/lungs.ico') }}"
+    />
+  </head>
+  <body class="fade-in">
+    <div class="perspective effect-rotate-left">
+      <div class="container">
+        <div class="outer-nav--return"></div>
+        <div id="viewport" class="l-viewport">
+          <div class="l-wrapper">
+            <!--  header -->
+            <header class="header">
+              <a class="header--logo" href="/">
+                <img src="../static/assets/img/lungs.ico" alt="Global" />
+                <p>Pulmo AI</p>
+              </a>
+              <!--<button class="header--cta cta">Hire Us</button>-->
+              <div class="view-theme">
+                <div class="light-dark">
+                  <input
+                    type="checkbox"
+                    class="theme-switch"
+                    id="theme-switch"
+                  />
+                  <label for="theme-switch" class="switch-label"></label>
+                </div>
+                <div class="header--nav-toggle">
+                  <span></span>
+                </div>
+              </div>
+            </header>
+
+            <!--  side nav -->
+            <nav class="l-side-nav">
+              <ul class="side-nav">
+                <li class="is-active"><span>Home</span></li>
+                <li><span>Objective</span></li>
+                <li><span>Certainty</span></li>
+                <li><span>Overview</span></li>
+                <li><span>Demo</span></li>
+              </ul>
+            </nav>
+            <ul class="l-main-content main-content">
+              <!--  first tap Home-->
+              <li class="l-section section section--is-active">
+                <div class="intro">
+                  <div class="intro--banner">
+                    <h1>
+                      Diagnose Covid <br />
+                      and Pneumonia <br />With AI
+                    </h1>
+                    <button class="cta">
+                      <a class="arrow">
+                        Demo
+                        <span>
+                          <svg
+                            version="1.1"
+                            id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px"
+                            y="0px"
+                            viewBox="0 0 150 118"
+                            style="enable-background: new 0 0 150 118"
+                            xml:space="preserve"
+                          >
+                            <g
+                              transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)"
+                            >
+                              <path
+                                d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                      </a>
+                      <span class="btn-background"></span>
+                    </button>
+                    <img
+                      src="../static/assets/img/xray-nobg.png"
+                      alt="Welcome"
+                    />
+                  </div>
+                  <!--
+                  <div class="intro--options">
+                    <a href="#0">
+                      <h3>Cloud integration</h3>
+                      <p>somthing to say</p>
+                    </a>
+                    <a href="#0">
+                      <h3>Mutilple Modes</h3>
+                      <p>something to say</p>
+                    </a>
+                    <a href="#0">
+                      <h3>topic 3</h3>
+                      <p>say something</p>
+                    </a>
+                  </div>
+                  -->
+                </div>
+              </li>
+              <!--  second tap Objective-->
+              <li class="l-section section">
+                <div class="about">
+                  <div class="about--banner">
+                    <h2>We<br />believe in<br />better world<br />with AI</h2>
+                    <a
+                      href="https://github.com/Andrew2077/Grad-project-Covid-pnemonia-identifier"
+                      >Our work
+                      <span>
+                        <svg
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          x="0px"
+                          y="0px"
+                          viewBox="0 0 150 118"
+                          style="enable-background: new 0 0 150 118"
+                          xml:space="preserve"
+                        >
+                          <g
+                            transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)"
+                          >
+                            <path
+                              d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"
+                            />
+                          </g>
+                        </svg>
+                      </span>
+                    </a>
+                    <img src="../static/assets/img/bg5.jpg" alt="About Us" />
+                  </div>
+                </div>
+              </li>
+              <!--  third tap Certainty  -->
+              <li class="l-section section">
+                <div class="work">
+                  <h2>Certainty</h2>
+                  <div class="work--lockup">
+                    <!-- Image previewer -->
+                    <!--CT RESULTS -->
+                    <div class="slideshow-container">
+                      <!-- Full-width images with number and caption text -->
+                      <div class="mySlides viewer_fade">
+                        <div class="numbertext"></div>
+                        <img
+                          src="..\static\assets\Results_images\CT-CM.jpg"
+                          style="width: 100%"
+                        />
+                        <div class="caption-text">
+                          <a> Best CT AI Model Confusion Matrix </a>
+                        </div>
+                      </div>
+
+                      <div class="mySlides viewer_fade">
+                        <div class="numbertext"></div>
+                        <img
+                          src="..\static\assets\Results_images\CT_acc.PNG"
+                          style="width: 100%"
+                        />
+                        <div class="caption-text">
+                          <a> Best CT AI Model Accuracy History </a>
+                        </div>
+                      </div>
+                      <div class="mySlides viewer_fade">
+                        <div class="numbertext"></div>
+                        <img
+                          src="..\static\assets\Results_images\CT-Metrics.png"
+                          style="width: 100%"
+                        />
+                        <div class="caption-text">
+                          <a> Best CT AI Model Diagnositc Metrics </a>
+                        </div>
+                      </div>
+
+                      <!-- X-RAY Container -->
+
+                      <div class="mySlides viewer_fade">
+                        <div class="numbertext"></div>
+                        <img
+                          src="..\static\assets\Results_images\XR-CM.png"
+                          style="width: 100%"
+                        />
+                        <div class="caption-text">
+                          <a> Best X-Ray AI Model Confusion Matrix </a>
+                        </div>
+                      </div>
+
+                      <div class="mySlides viewer_fade">
+                        <div class="numbertext"></div>
+                        <img
+                          src="..\static\assets\Results_images\XR_acc.png"
+                          style="width: 100%"
+                        />
+                        <div class="caption-text">
+                          <a> Best X-Ray AI Model Accuracy History </a>
+                        </div>
+                      </div>
+
+                      <div class="mySlides viewer_fade">
+                        <div class="numbertext"></div>
+                        <img
+                          src="..\static\assets\Results_images\XR-Metrics.png"
+                          style="width: 100%"
+                        />
+                        <div class="caption-text">
+                          <a> Best X-Ray AI Model Diagnositc Metrics </a>
+                        </div>
+                      </div>
+
+                      <!-- Next and previous buttons -->
+                      <a class="show_prev_slide" onclick="plusSlides(-1)"
+                        >&#10094;</a
+                      >
+                      <a class="show_next_slide" onclick="plusSlides(1)"
+                        >&#10095;</a
+                      >
+                    </div>
+                    <br />
+
+                    <!-- The dots/circles -->
+                    <div style="text-align: center">
+                      <span class="dot" onclick="currentSlide(1)"></span>
+                      <span class="dot" onclick="currentSlide(2)"></span>
+                      <span class="dot" onclick="currentSlide(3)"></span>
+                      <span class="dot" onclick="currentSlide(4)"></span>
+                      <span class="dot" onclick="currentSlide(5)"></span>
+                      <span class="dot" onclick="currentSlide(6)"></span>
+                    </div>
+
+                    <!-- Image previewer -->
+                  </div>
+                </div>
+              </li>
+              <!--  fourth tap Contact-->
+              <li class="l-section section">
+                <div class="contact">
+                  <div class="contact--lockup">
+                    <div class = "video-displayer">
+                    <h2>Walkthrough</h2>
+                    <video width="640" height="480" controls>
+                      <source src="..\static\WalkThrough.mp4" type="video/mp4" />
+                      <source src="movie.ogg" type="video/ogg" />
+                      Your browser does not support the video tag.
+                    </video>
+                    </div>
+                    <div class="modal">
+                      <div class="modal--information">
+                        <p>Overview</p>
+                        <a href="https://github.com/Andrew2077/PulmoAI">GitHub-link</a>
+                        <!-- <a href="tel:+148126287560">+48 12 628 75 60</a> -->
+                      </div>
+                      <!-- <ul class="modal--options">
+                        <li><a href="#0">Bēhance</a></li>
+                        <li><a href="#0">dribbble</a></li>
+                        <li>
+                          <a href="mailto:ouremail@gmail.com">Contact Us</a>
+                        </li>
+                      </ul> -->
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!--  fifth tap Demo-->
+              <li class="l-section section">
+                <div class="hire">
+                  <div>
+                    <!-- checkout formspree.io for easy form setup -->
+                    <form action="signup" class="work-request" method="POST">
+                      <div>
+                        <header class="login-header">
+                          <h3>Try Demo</h3>
+                        </header>
+                      </div>
+                      <input
+                        class="juicy-button"
+                        type="submit"
+                        value="signup"
+                      />
+                    </form>
+                    <br />
+                    <form action="login" class="work-request" method="POST">
+                      <input type="submit" value="login" />
+                    </form>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <ul class="outer-nav">
+        <li class="is-active">Home</li>
+        <li>Objective</li>
+        <li>Certainty</li>
+        <li>Overview</li>
+        <li>Demo</li>
+      </ul>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="../static/assets/js/vendor/jquery-2.2.4.min.js"><\/script>'
+        );
+    </script>
+    <script src="../static/assets/js/functions-min.js"></script>
+    <script src="../static/assets/js/load_theme.js"></script>
+    <script src="../static/assets/js/viewer.js"></script>
+  </body>
+</html>

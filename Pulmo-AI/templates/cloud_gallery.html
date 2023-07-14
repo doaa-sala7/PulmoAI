@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pulmo Ai</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="HTML5 website template" />
+    <meta name="keywords" content="global, template, html, sass, jquery" />
+    <meta name="author" content="Bucky Maler" />
+    <link rel="stylesheet" href="../static/assets/css/main.css" />
+    <link rel="stylesheet" href="../static/assets/css/demo.css" />
+    <link rel="stylesheet" href="../static/assets/css/gallery.css" />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='../static/assets/img/lungs.ico') }}"
+    />
+  </head>
+  <body>
+    <h1 class="title">Gallery</h1>
+    <div class="main-div">
+      {% for query in requested_db %}
+      <div class="gallery">
+        <a target="_self" href={{query['location'].split("/")[-1]}}> <img
+        src={{query['url']}} alt="{{query['filename']}}" width="600"
+        height="400" />
+
+        <div class="desc">
+          <p class="adjust-paragraph">
+            Diagnosed Condition : {{query['diagnose']}}
+          </p>
+        </div>
+        <div class="desc">Medical Image Type : {{query['image_type']}}</div>
+        <div class="desc">Patient Name : {{query['name']}}</div>
+        <div class="desc">Patient description : {{query['description']}}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

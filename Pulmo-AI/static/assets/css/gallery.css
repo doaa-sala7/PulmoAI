@@ -1,0 +1,155 @@
+*::-webkit-scrollbar {
+    display: none;
+}
+
+.welcome-text {
+    padding-left: 0%;
+    margin-bottom: 0%;
+    margin-left: 0%;
+    margin-top: 2%;
+    font-size: 4em;
+}
+
+.gallery-child-div {
+    padding-top: 1%;
+}
+
+.header.pulmo {
+    padding-top: 0%;
+}
+.gallery-border {
+    border: 1px solid var(--object_color);
+    border-radius: 20px;
+    background-color: var(--object_color);
+    padding: 1%;
+    margin-right: 1%;
+}
+
+.gallery-container {
+    padding: 0%;
+    margin: 1%;
+    margin-left: 1%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    overflow-y: scroll;
+    max-height: 500px;
+    background-color: var(--object_color)
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 2%;
+}
+
+.gallery-item {
+    position: relative;
+    width: 300px;
+    height: auto;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item .image-overlay {
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    padding-top: 0%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    overflow-y: auto;
+    max-height: 100px;
+    transition: opacity 0.3s ease;
+}
+
+/* disable over flow of text */
+.image-overlay p {
+    font-size: larger;
+    padding-top: 0%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+}
+
+.gallery-item:hover .image-overlay {
+    opacity: 1;
+}
+
+
+
+/*#* upload button */
+.juicy-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: var(--object_color);
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.juicy-button::before,
+.juicy-button::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(0);
+    transition: transform 0.3s;
+}
+
+.juicy-button::before {
+    top: -10px;
+    left: 10px;
+}
+
+.juicy-button::after {
+    bottom: -10px;
+    right: 10px;
+}
+
+.juicy-button:hover {
+    color: var(--highlighted_font_color);
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.juicy-button:hover::before,
+.juicy-button:hover::after {
+    transform: scale(1);
+}
+
+.buttons-container {
+    padding-top: 1%;
+    justify-self: right;
+}
+.buttons-container a{
+    align-self: left;
+}
+
+.upload-button {
+    right: 0;
+    padding-top: 0.5%;
+    padding-left: 43%;
+}

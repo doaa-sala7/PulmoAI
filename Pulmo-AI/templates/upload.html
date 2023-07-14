@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pulmo Ai</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="HTML5 website template" />
+    <meta name="keywords" content="global, template, html, sass, jquery" />
+    <meta name="author" content="Bucky Maler" />
+    <link rel="stylesheet" href="../static/assets/css/main.css" />
+    <link rel="stylesheet" href="../static/assets/css/main-welcome.css" />
+    <link rel="stylesheet" href="../static/assets/css/demo.css" />
+    <link rel="stylesheet" href="../static/assets/css/signup.css" />
+    <link rel="stylesheet" href="../static/assets/css/theme.css" />
+    <link rel="stylesheet" href="../static/assets/css/gallery.css" />
+    <link rel="stylesheet" href="../static/assets/css/upload.css" />
+    <link rel="stylesheet" href="../static/assets/css/transitions.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/simplebar/dist/simplebar.min.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='../static/assets/img/lungs.ico') }}"
+    />
+  </head>
+  <body class="fade-in">
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="/home.html">
+            <img src="../static/assets/img/lungs.ico" alt="Global" />
+            <p>Pulmo AI</p>
+          </a>
+          <!--<button class="header--cta cta">Hire Us</button>-->
+          <div class="view-theme">
+            <div class="light-dark">
+              <input type="checkbox" class="theme-switch" id="theme-switch" />
+              <label for="theme-switch" class="switch-label"></label>
+            </div>
+
+            <div class="profile-dropdown">
+              <img
+                src="static\assets\img\profile.png"
+                alt="Profile"
+                class="profile-icon"
+              />
+              <div class="dropdown-content">
+                <a href="#">{{name}}</a>
+                <a href="/logout">Log Out</a>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="gallery-main-div">
+          <div class="main-form-display">
+            <div class="form-header">
+              <div class="form-header-title">
+                <p class="welcome-text">Upload Form</p>
+              </div>
+              <div class="from-header-button">
+                <button
+                  class="juicy-button"
+                  onclick="window.location.href = '/cloud_gallery';"
+                >
+                  Back to Gallery
+                </button>
+              </div>
+            </div>
+            <form
+              name="upload_form"
+              action="/upload"
+              method="Post"
+              enctype="multipart/form-data"
+            >
+              <div class="form-container">
+                <div class="left-column">
+                  {% with messages = get_flashed_messages() %} {% if messages %}
+                  <ul class="flashes">
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %} {% endwith %}
+
+                  <div class="file-input-container">
+                    <label class="juicy-button file-input-label">
+                      <a class="new-button-text-color"> Select Image </a>
+                      <input
+                        type="file"
+                        name="images"
+                        id="file-input"
+                        for="file-input"
+                      />
+                    </label>
+                  </div>
+                  <label for="image_type">Medical Image Type :</label>
+                  <select id="image_type" name="image_type">
+                    <option value="Xray">Xray</option>
+                    <option value="CT">CT</option>
+                  </select>
+
+                  <label for="diagnose">Patient Diagnose :</label>
+                  <select id="diagnose" name="diagnose">
+                    <option value="Not-diagnosed">Not-diagnosed</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Covid">Covid</option>
+                    <option value="Pneumonia">Pneumonia</option>
+                  </select>
+
+                  <label for="id">Patient ID:</label>
+                  <input
+                    type="text"
+                    id="id"
+                    name="id"
+                    placeholder="Enter Patient ID"
+                    required
+                    autocomplete="off"
+                  />
+                  <label for="description">Description :</label>
+                  <textarea
+                    class="description-input"
+                    id="description"
+                    name="description"
+                    rows="10"
+                    placeholder="Enter description here..."
+                  ></textarea>
+                  
+                  {% if msg_type == "danger" %}
+                  <div class="alert alert-danger" role="alert">
+                    <a cllass="alert-danger"> {{ msg }}</a>
+                  </div>
+                  {% endif %}
+
+                  {% if msg_type == "success" %}
+                  <div class="alert alert-success" role="alert">
+                    <a class="alert-success"> {{ msg }}</a>
+                  </div>
+                  {% endif %}
+
+                  {% if msg_type == "info" %}
+                  <div class="alert alert-warning" role="alert">
+                    <a class="alert-warning"> {{ msg }}</a>
+                  </div>
+                  {% endif %}
+                
+
+                  <!-- <input class="juicy-button file-input-label form_submit_btn" type="submit" value="Upload" /> -->
+                  <button
+                    name="action"
+                    value="Upload"
+                    class="juicy-button"
+                    type="submit"
+                  >
+                    Upload
+                  </button>
+                </div>
+                <div class="right-column">
+                  <div class="image-preview-container">
+                    <div id="image-preview" class="image-preview show-image">
+                      <span id="placeholder-text"
+                        >Select an image to display</span
+                      >
+                      <img id="selected-image" src="" alt="Selected Image" />
+                    </div>
+                  </div>
+                  <div class "return-button-container">
+                  <div class="buttons-container">
+                    <button
+                      class="return-button juicy-button"
+                      type="submit"
+                      value="Upload_Go"
+                      name="action"
+                      onclick="window.location.href = '/{{filename}}';"
+                    >
+                      Upload & Diagnose
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../static/assets/js/preview_image.js"></script>
+    <script src="../static/assets/js/load_theme.js"></script>
+  </body>
+</html>

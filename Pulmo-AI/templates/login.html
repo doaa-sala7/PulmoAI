@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="HTML5 website template" />
+    <meta name="keywords" content="global, template, html, sass, jquery" />
+    <meta name="author" content="Bucky Maler" />
+    <link rel="stylesheet" href="../static/assets/css/main.css" />
+    <link rel="stylesheet" href="../static/assets/css/main-welcome.css" />
+    <link rel="stylesheet" href="../static/assets/css/demo.css" />
+    <link rel="stylesheet" href="../static/assets/css/signup.css" />
+    <link rel="stylesheet" href="../static/assets/css/theme.css" />
+    <link rel="stylesheet" href="../static/assets/css/gallery.css" />
+    <link rel="stylesheet" href="../static/assets/css/transitions.css" />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='../static/assets/img/lungs.ico') }}"
+    />
+  </head>
+  <body class="fade-in">
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="/home.html">
+            <img src="../static/assets/img/lungs.ico" alt="Global" />
+            <p>Pulmo AI</p>
+          </a>
+          <!--<button class="header--cta cta">Hire Us</button>-->
+          <div class="view-theme">
+            <div class="light-dark">
+              <input type="checkbox" class="theme-switch" id="theme-switch" />
+              <label for="theme-switch" class="switch-label"></label>
+            </div>
+          </div>
+        </header>
+
+        <!-- 
+    <div class="switch-contianer">
+      <div class="switch-header">
+        <div class="view-theme">
+          <div class="light-dark">
+            <input type="checkbox" class="theme-switch" id="theme-switch" />
+            <label for="theme-switch" class="switch-label"></label>
+          </div>
+        </div>
+      </div>
+      -->
+        <div>
+          <form
+            class="signup"
+            method="Post"
+            action="login_complete"
+            style="border: 1px solid #ccc"
+            name="login"
+          >
+            <div class="container">
+              <h1 class="h1-title">Log In</h1>
+              <p>Enter your Email and Password</p>
+              <hr />
+              <label for="email"><b>Email</b></label>
+              <input
+                autocomplete="off"
+                type="email"
+                placeholder="Enter Email"
+                id="usr"
+                name="email"
+                required
+              />
+              <label for="password"><b>Password</b></label>
+              <input
+                type="password"
+                placeholder="Enter Password"
+                name="password"
+                id="password"
+                required
+              />
+              <!--
+              <label>
+              <input
+                type="checkbox"
+                checked="checked"
+                name="remember"
+                style="margin-bottom: 15px"
+              />
+              Remember me
+            </label>
+            -->
+              {% if show_msg %}
+              <div class="alert alert-danger color: red" role="alert">
+                <a cllass = 'alert-danger'> {{ msg }}</a>
+                </div>
+              {% endif %}
+
+              <div class="clearfix">
+                <button action="Login-complete" type="submit">Log In</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="../static/assets/js/vendor/jquery-2.2.4.min.js"><\/script>'
+        );
+    </script>
+    <!-- <script src="../static/assets/js/functions-min.js"></script> -->
+    <script src="../static/assets/js/load_theme.js"></script>
+    <script src="../static/assets/js/transitions.js"></script>
+  </body>
+  <!--end log form -->
+</html>

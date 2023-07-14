@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pulmo Ai</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="HTML5 website template" />
+    <meta name="keywords" content="global, template, html, sass, jquery" />
+    <meta name="author" content="Bucky Maler" />
+    <link rel="stylesheet" href="../static/assets/css/main.css" />
+    <link rel="stylesheet" href="../static/assets/css/main-welcome.css" />
+    <link rel="stylesheet" href="../static/assets/css/demo.css" />
+    <link rel="stylesheet" href="../static/assets/css/signup.css" />
+    <link rel="stylesheet" href="../static/assets/css/theme.css" />
+    <link rel="stylesheet" href="../static/assets/css/gallery.css" />
+    <link rel="stylesheet" href="../static/assets/css/transitions.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/simplebar/dist/simplebar.min.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='../static/assets/img/lungs.ico') }}"
+    />
+  </head>
+  <body class="fade-in">
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="/home.html">
+            <img src="../static/assets/img/lungs.ico" alt="Global" />
+            <p>Pulmo AI</p>
+          </a>
+          <!--<button class="header--cta cta">Hire Us</button>-->
+          <div class="view-theme">
+            <div class="light-dark">
+              <input type="checkbox" class="theme-switch" id="theme-switch" />
+              <label for="theme-switch" class="switch-label"></label>
+            </div>
+
+            <div class="profile-dropdown">
+              <img
+                src="static\assets\img\profile.png"
+                alt="Profile"
+                class="profile-icon"
+              />
+              <div class="dropdown-content">
+                <a href="#">{{name}}</a>
+                <a href="/logout">Log Out</a>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="gallery-main-div">
+          <div class="gallery-child-div">
+            <p class="welcome-text">Welcome {{name}}</p>
+            <div class="gallery-border">
+              <div class="gallery-container">
+                <div class="gallery">
+                  {% for request in requested_db %}
+                  <div class="gallery-item animate__animated animate__fadeIn">
+                    <a target="_self" href="{{request['location'].split("/")[-1]}}">
+                      <img src="{{ request['url'] }}"  alt="No-acces-to-image" />
+                    </a>
+                    <div class="image-overlay">
+                      <p>
+                        patient-id : {{ request['id'] }}
+                        <br />
+                        patient-diagnose : {{ request['diagnose'] }}
+                        <br />
+                        patient-description : {{ request['description'] }}
+                      </p>
+                    </div>
+                  </div>
+                  {% endfor %}
+                  <!-- Add more images as needed -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="buttons-container">
+            <div class="upload-button">
+              <a href="upload" class="juicy-button">Upload data</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <script src="https://unpkg.com/simplebar/dist/simplebar.min.js"></script>
+
+    <script src="../static/assets/js/functions-min.js"></script>
+    <script src="../static/assets/js/functions-min.js"></script>
+    <script src="../static/assets/js/load_theme.js"></script>
+
+    <!--end log form -->
+  </body>
+</html>

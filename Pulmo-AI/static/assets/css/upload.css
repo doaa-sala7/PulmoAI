@@ -1,0 +1,336 @@
+/* Form container */
+.main-form-display {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/*############################## header button ############################## */
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding-top: 2%;
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+    padding-bottom: 1%;
+}
+
+
+.from-header-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 10px;
+}
+
+/*############################## header button ############################## */
+
+.welcome-text {
+    padding-left: 0%;
+    font-size: 3em;
+}
+
+
+.form-container {
+    display: flex;
+    width: 75%;
+    height: 570px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background_color);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.618);
+}
+
+/* Left column */
+.left-column {
+    flex: 1;
+    margin-right: 20px;
+    /* Added margin to create space between left and right columns */
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Flash messages */
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.flashes li {
+    color: red;
+}
+
+/* File input */
+.file-input-container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.file-input-container input[type="file"] {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--buttons_font_color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.file-input-label {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+/* .file-input-label:hover {
+    background-color: #45a049;
+} */
+
+/* Select inputs */
+select {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--background_color);
+    margin-bottom: 10px;
+    color: var(--buttons_font_color);
+    background-color: var(--object_color);
+}
+
+/* Text inputs */
+input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    /* color: black; */
+}
+
+/* Description input */
+.description-input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    /*######################################  description-height */
+    height: 118.7px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: black;
+    background-color: var(--input_label_background);
+    margin-bottom: 10px;
+    overflow: auto;
+    resize: none;
+}
+
+/* Submit button */
+input[type="submit"] {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: var(--object_color);
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+
+
+/* Right column */
+.right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Added space-between to push the button to the bottom */
+    padding-left: 20px;
+}
+
+/*########################## Image preview ############################# */
+.image-preview-container {
+    padding-top: 2%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.image-preview {
+    align-self: center;
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.image-preview.show-image {
+    opacity: 1;
+}
+
+.image-preview img {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    display: flex;
+    margin: 0 auto;
+    /* Center the image horizontally */
+    display: none;
+}
+
+#placeholder-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #999;
+    font-style: italic;
+    font-size: 14px;
+    pointer-events: none;
+    white-space: nowrap;
+    /* Added to keep the text in one line */
+}
+
+/*########################## Image preview ############################# */
+
+
+/*########################## Return Button ############################# */
+
+.return-button-container {
+    height: 10%;
+    padding-bottom: 10%;
+}
+
+/* Return to gallery button */
+.return-button {
+    display: block;
+    padding: 0%;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+/* Upload button */
+.juicy-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: var(--object_color);
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.juicy-button::before,
+
+
+.juicy-button::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(0);
+    transition: transform 0.3s;
+}
+
+.juicy-button::before {
+    top: -10px;
+    left: 10px;
+}
+
+.juicy-button::after {
+    bottom: -10px;
+    right: 10px;
+}
+
+.form_submit_btn {
+    padding: 1%;
+}
+
+.form_submit_btn :hover {
+    color: var(--highlighted_font_color);
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"]:hover {
+    color: var(--highlighted_font_color);
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.juicy-button:hover {
+    color: var(--highlighted_font_color);
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.juicy-button:hover::before,
+.juicy-button:hover::after {
+    transform: scale(1);
+}
+
+.buttons-container {
+    padding-top: 1%;
+    padding-bottom: 0%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttons-container .juicy-button {
+    margin-left: 10px;
+}
