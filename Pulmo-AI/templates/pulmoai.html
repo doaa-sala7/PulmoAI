@@ -62,20 +62,31 @@
         </header>
         <div class="gallery-main-div">
           <div class="main-form-display">
-            <div class="form-header">
-              <div class="form-header-title">
-                <p class="welcome-text">Pulmo's Preview</p>
-              </div>
-              <div class="from-header-button">
-                <button
-                  class="juicy-button"
-                  onclick="window.location.href = '/cloud_gallery';"
-                >
-                  Back to Gallery
-                </button>
-              </div>
-            </div>
             <form name="edit-form" action="/action" method="Post">
+              <div class="form-header">
+                <div class="form-header-title">
+                  <p class="welcome-text">Pulmo's Preview</p>
+                </div>
+                <div class="from-header-button">
+                  <button
+                    name="action"
+                    value="Delete"
+                    type="submit"
+                    class="juicy-button"
+                  >
+                    Delete Sample
+                  </button>
+                  <button
+                    name="action"
+                    value="Gallery"
+                    type="button"
+                    class="juicy-button"
+                    onclick="window.location.href = '/cloud_gallery';"
+                  >
+                    Data Gallery
+                  </button>
+                </div>
+              </div>
               <div class="form-container">
                 <div class="right-block">
                   <div class="info-div">
@@ -156,13 +167,12 @@
                       <div class="buttons-section">
                         <div class="model-dropdown">
                           <select name="model" id="model">
-                            {% for key, value in models_pathes.items()%}
-                            {% if value == selected_model%}
+                            {% for key, value in models_pathes.items()%} {% if
+                            value == selected_model%}
                             <option selected value="{{value}}">{{key}}</option>
                             {% else %}
                             <option value="{{value}}">{{key}}</option>
-                            {% endif %}
-                            {% endfor %}
+                            {% endif %} {% endfor %}
                           </select>
                         </div>
                         <div class="predict-button">

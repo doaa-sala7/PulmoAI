@@ -3,6 +3,7 @@ import json
 from firebase_admin import credentials, firestore, initialize_app, storage, auth
 import firebase_admin
 import pyrebase
+from typing import List, Dict, Tuple, Optional
 
 storage_loaction = "pulmoai-b3fa7.appspot.comg/images"
 
@@ -141,7 +142,8 @@ def request_image_info(collection, document, filename):
     for item in all_data:
         if item["filename"] == filename:
             return item
-    return None
+    return None 
+
 
 def verify_password(collection, document, password):
     if password == db.collection(collection).document(document).get().to_dict()["password"]:
@@ -186,8 +188,22 @@ def download(filename):
     print("Image downloaded successfully.")
     return download_path
     
+    
+def delete_image(collection, document, filename):
+    all_data = db.collection(collection).document(document).get().to_dict()["images"]
+    for item in all_data:
+        if item["filename"] == filename:
+            print("found and deleting")
+            all_data.remove(item)
+        else:
+            print("not found")
+    db.collection(collection).document(document).update({"images": all_data})
+    return all_data
 
 
 if __name__ == "__main__":
-    # create_user("Users", "name", "1234", "password")
-    download('covid1.jpeg')
+    from pprint import pprint
+    collection  = "Users"
+    document = "YTc2h1J9xHOa5DAd28iDmhp8ZJ73"
+    filename = 'Normal_1_T_F.png'
+

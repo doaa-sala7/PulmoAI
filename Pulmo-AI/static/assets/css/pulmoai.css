@@ -176,3 +176,9 @@ label {
   /* display: -ms-inline-grid; */
   display: inline-grid;
 }
+
+
+.from-header-button{
+  width: 40%;
+  gap: 10%;
+}

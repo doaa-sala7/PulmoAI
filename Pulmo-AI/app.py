@@ -177,8 +177,8 @@ def create_app(model):
                     app.config["DOWNLOAD_IMAGE"],
                     selected_model,
                     model,
-                    image_type=requested_image_data["image_type"],
-                    debug_mode=False,
+                    image_type=requested_image_data["image_type"],  # type: ignore
+                    debug_mode=True,
                 )
 
                 return render_template(
@@ -271,8 +271,8 @@ def create_app(model):
                 app.config["DOWNLOAD_IMAGE"],
                 selected_model,
                 model,
-                image_type=requested_image_data["image_type"],
-                debug_mode=False,
+                image_type=requested_image_data["image_type"],  # type: ignore
+                debug_mode=True,
             )
 
             return render_template(
@@ -348,8 +348,8 @@ def create_app(model):
                     app.config["DOWNLOAD_IMAGE"],
                     selected_model,
                     model,
-                    image_type=requested_image_data["image_type"],
-                    debug_mode=False,
+                    image_type=requested_image_data["image_type"],  # type: ignore
+                    debug_mode=True,
                 )
 
                 return render_template(
@@ -363,6 +363,11 @@ def create_app(model):
                     graphJSON=predictions_fig,
                     imageJSON=image_fig,
                 )
+            elif request.form.get("action") == "Delete":
+                requested_image_data = delete_image("Users", uid, filename)
+                return render_template(
+                    "main.html", requested_db=requested_image_data, name=name
+                )
             else:
                 return "UNHANDLED REQUEST"
         else:
@@ -374,4 +379,4 @@ def create_app(model):
 if __name__ == "__main__":
     model = None
     app = create_app(model)
-    app.run(debug=False)
+    app.run(debug=True)
