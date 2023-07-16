@@ -178,7 +178,7 @@ def create_app(model):
                     selected_model,
                     model,
                     image_type=requested_image_data["image_type"],  # type: ignore
-                    debug_mode=True,
+                    debug_mode=False,
                 )
 
                 return render_template(
@@ -272,7 +272,7 @@ def create_app(model):
                 selected_model,
                 model,
                 image_type=requested_image_data["image_type"],  # type: ignore
-                debug_mode=True,
+                debug_mode=False,
             )
 
             return render_template(
@@ -349,7 +349,7 @@ def create_app(model):
                     selected_model,
                     model,
                     image_type=requested_image_data["image_type"],  # type: ignore
-                    debug_mode=True,
+                    debug_mode=False,
                 )
 
                 return render_template(
@@ -379,4 +379,4 @@ def create_app(model):
 if __name__ == "__main__":
     model = None
     app = create_app(model)
-    app.run(debug=True)
+    app.run(debug=False)
