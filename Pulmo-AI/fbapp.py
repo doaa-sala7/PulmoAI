@@ -1,9 +1,9 @@
 import datetime
-import json
 from firebase_admin import credentials, firestore, initialize_app, storage, auth
 import firebase_admin
-import pyrebase
 from typing import List, Dict, Tuple, Optional
+from argon2 import PasswordHasher
+ph = PasswordHasher()
 
 storage_loaction = "pulmoai-b3fa7.appspot.comg/images"
 
@@ -54,7 +54,7 @@ def create_user(collection, display_name, uid, password):
             "uid": uid,
             "name": display_name,
             "images": [],
-            "password": password, #TODO: Hash password
+            "password": ph.hash(password),
         }
     )
 
@@ -146,10 +146,14 @@ def request_image_info(collection, document, filename):
 
 
 def verify_password(collection, document, password):
-    if password == db.collection(collection).document(document).get().to_dict()["password"]:
+    if ph.verify(db.collection(collection).document(document).get().to_dict()["password"], password):
         return True
     else:
         return False
+    # if password == db.collection(collection).document(document).get().to_dict()["password"]:
+    #     return True
+    # else:
+    #     return False
 
 
 def login_fb(email):
@@ -202,8 +206,4 @@ def delete_image(collection, document, filename):
 
 
 if __name__ == "__main__":
-    from pprint import pprint
-    collection  = "Users"
-    document = "YTc2h1J9xHOa5DAd28iDmhp8ZJ73"
-    filename = 'Normal_1_T_F.png'
-
+    pass
