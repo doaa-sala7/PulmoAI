@@ -3,22 +3,14 @@ from firebase_admin import credentials, firestore, initialize_app, storage, auth
 import firebase_admin
 from typing import List, Dict, Tuple, Optional
 from argon2 import PasswordHasher
+import json
 ph = PasswordHasher()
 
 storage_loaction = "pulmoai-b3fa7.appspot.comg/images"
 
+with open('Creds/config.json') as f:
+    config = json.load(f)
 
-
-# config = {
-#     "apiKey": "AIzaSyBMDEOOYHVWtPYuzC1eaYw_vU_XOsd4SYg",
-#     "authDomain": "pulmoai-b3fa7.firebaseapp.com",
-#     "projectId": "pulmoai-b3fa7",
-#     "storageBucket": "pulmoai-b3fa7.appspot.com",
-#     "messagingSenderId": "244590506149",
-#     "appId": "1:244590506149:web:b05d76aed1127694225d4c",
-#     "measurementId": "G-Q4C767572X",
-#     "databaseURL": "https://pulmoai-b3fa7-default-rtdb.europe-west1.firebasedatabase.app/",
-# }
 
 
 # * old method for firebase
