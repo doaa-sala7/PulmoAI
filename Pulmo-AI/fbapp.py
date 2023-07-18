@@ -69,6 +69,7 @@ def create_form_data(
         "description": description,
         "id": id,
         "filename": filename,
+        # "filename": id + "_" + filename.split(".")[1],
         "location": storage_loaction + "/" + filename,
         "diagnose": diagnose,
     }
@@ -94,7 +95,9 @@ def updateDB(
         images = results.to_dict()["images"]
 
         filename = data["filename"]
-        cloud_path = "images/" + filename
+        # cloud_path = "images/" + filename
+        cloud_path = f"images/{document}/" + filename
+        
         idx, image_found = search_similar_images(images, filename)
         firebase_storage.blob(cloud_path).upload_from_filename(upload_path)
 
@@ -114,9 +117,9 @@ def updateDB(
     #     print("New User Created")
 
 
-def create_timed_url(location):
+def create_timed_url(location, document):
     filename = location.split("/")[-1]
-    blob = firebase_storage.blob("images/" + filename)
+    blob = firebase_storage.blob(f"images/{document}/" + filename)
     expiration = datetime.datetime.now() + datetime.timedelta(minutes=60)
     timed_url = blob.generate_signed_url(expiration=expiration, version="v4")
     return timed_url
@@ -125,7 +128,7 @@ def create_timed_url(location):
 def requestDB(collection, document):
     all_data = db.collection(collection).document(document).get().to_dict()["images"]
     for item in all_data:
-        item["url"] = create_timed_url(item["location"])
+        item["url"] = create_timed_url(item["location"], document)
     db.collection(collection).document(document).update({"images": all_data})
     return all_data
 
@@ -178,9 +181,9 @@ def signup_fb(email, password, username):
     return msg
 
 
-def download(filename):
+def download(filename, document):
     download_path = f"static/download/downloaded.{filename.split('.')[-1]}"
-    blob = firebase_storage.blob("images/" + filename)
+    blob = firebase_storage.blob(f"images/{document}/{filename}")
     blob.download_to_filename(download_path)
     print("Image downloaded successfully.")
     return download_path
@@ -195,8 +198,14 @@ def delete_image(collection, document, filename):
         else:
             print("not found")
     db.collection(collection).document(document).update({"images": all_data})
+    blob = firebase_storage.blob(f"images/{document}/{filename}")
+    blob.delete()
     return all_data
 
 
 if __name__ == "__main__":
     pass
+    # cloud_path = "images/test/1.jpeg"
+    # upload_path = r"static\sample\covid1.jpeg"
+    # firebase_storage.blob(cloud_path).upload_from_filename(upload_path)
+

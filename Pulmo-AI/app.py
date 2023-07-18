@@ -172,7 +172,7 @@ def create_app(model):
                 # print(f"selected_model: {selected_model}")
 
                 # * MODEL PREDICTION
-                app.config["DOWNLOAD_IMAGE"] = download(filename)
+                app.config["DOWNLOAD_IMAGE"] = download(filename, uid)
                 image_fig, predictions_fig = Load_predict(
                     app.config["DOWNLOAD_IMAGE"],
                     selected_model,
@@ -266,7 +266,7 @@ def create_app(model):
             # print(f"selected_model: {selected_model}")
 
             # * MODEL PREDICTION
-            app.config["DOWNLOAD_IMAGE"] = download(filename)
+            app.config["DOWNLOAD_IMAGE"] = download(filename, uid)
             image_fig, predictions_fig = Load_predict(
                 app.config["DOWNLOAD_IMAGE"],
                 selected_model,
@@ -343,7 +343,7 @@ def create_app(model):
                 selected_model = request.form.get("model")  # type: ignore
 
                 # * MODEL PREDICTION
-                app.config["DOWNLOAD_IMAGE"] = download(filename)
+                app.config["DOWNLOAD_IMAGE"] = download(filename, uid)
                 image_fig, predictions_fig = Load_predict(
                     app.config["DOWNLOAD_IMAGE"],
                     selected_model,
@@ -379,4 +379,4 @@ def create_app(model):
 if __name__ == "__main__":
     model = None
     app = create_app(model)
-    app.run(debug=False)
+    app.run(debug=True)
