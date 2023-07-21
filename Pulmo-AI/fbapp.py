@@ -142,14 +142,12 @@ def request_image_info(collection, document, filename):
 
 
 def verify_password(collection, document, password):
-    if ph.verify(db.collection(collection).document(document).get().to_dict()["password"], password):
+    try:
+        ph.verify(db.collection(collection).document(document).get().to_dict()["password"], password)
         return True
-    else:
+    except:
         return False
-    # if password == db.collection(collection).document(document).get().to_dict()["password"]:
-    #     return True
-    # else:
-    #     return False
+
 
 
 def login_fb(email):
@@ -204,8 +202,8 @@ def delete_image(collection, document, filename):
 
 
 if __name__ == "__main__":
-    pass
-    # cloud_path = "images/test/1.jpeg"
-    # upload_path = r"static\sample\covid1.jpeg"
-    # firebase_storage.blob(cloud_path).upload_from_filename(upload_path)
-
+    userid = '1WKqweFlcqVjNrRkXg01956jeZi2'
+    crt_pwd = "password@k124"
+    incrt_pwd = "incorretjml#"
+    
+    print(verify_password("Users", userid, incrt_pwd))
