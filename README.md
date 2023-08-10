@@ -3,7 +3,7 @@ Pulmo AI : Is a web application that is build on a machine learning research, in
 
 ### Overview
 - Walkthrough of the application
-<video width="630" height="300" src="Pulmo-AI/static/WalkThrough.mp4"></video>
+<video width="630" height="300" src="https://github.com/Andrew2077/PulmoAI/blob/main/Pulmo-AI/static/WalkThrough.mp4"></video>
 
 ## Table of Contents
 - [Pulmo AI : Automatic Covid Detection](#pulmo-ai--automatic-covid-detection)
