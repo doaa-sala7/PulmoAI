@@ -1,7 +1,6 @@
 
 # <p ><img src="Pulmo-AI\static\assets\img\lungs.ico" alt="Icon" width="30" height="30"> Pulmo AI : Automatic Covid Detection </p> 
-Pulmo AI : Is a web application that is build on a machine learning research, in which we implmented various deep learning  classification models to detect Pneumonia and Covid from Xray and CT images
-
+**Pulmo AI**: Step into the world of cutting-edge technology with our web application. Built upon groundbreaking machine learning research, we've harnessed the power of diverse deep learning classification models. Our application is designed to accurately identify Pneumonia and Covid cases from X-ray and CT images, bringing crucial medical insights to your fingertips.
 ### Research & Results
 Gain profound insights into the intricate technical aspects of our research through the pages of our comprehensive research paper. Explore the intricacies of our integrated AI models, delve into our training methodologies, and uncover details about the datasets we utilized by clicking [here](PULMO.pdf)!  
   
