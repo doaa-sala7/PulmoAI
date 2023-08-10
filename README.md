@@ -27,8 +27,8 @@ https://github.com/Andrew2077/PulmoAI/assets/92538925/9afdae6f-deb6-4e9b-a05c-68
 - Firendly User Interface - Web Application
 - Database integration
 - Fast prediction time [Strong GPU required]
-  - The project was built to run on `GTX1650 4GB` GPU, and it takes around 7 seconds to switch between models and predict the results
-  - with a stronger GPU the wprediction time will be significantly reduced
+  - The project was built to run on `GTX1650 4GB` GPU, and it takes around 7 seconds to switch between models and predict the results.
+  - with a stronger GPU the prediction time will be significantly reduced, as all models will be loaded only once.
 
 ## installation - Conda
 > warning: AI models are not uploaded yet
