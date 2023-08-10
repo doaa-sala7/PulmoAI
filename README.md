@@ -11,6 +11,9 @@ Gain profound insights into the intricate technical aspects of our research thro
 
 https://github.com/Andrew2077/PulmoAI/assets/92538925/9afdae6f-deb6-4e9b-a05c-68e278741180
 
+#TODO: upload Video with new Features
+- Faster performance
+- Delete button
 
 
 ## Table of Contents
@@ -46,7 +49,7 @@ https://github.com/Andrew2077/PulmoAI/assets/92538925/9afdae6f-deb6-4e9b-a05c-68
   conda activate pulmoai
   ```
 - Follow the Firebase Authentication Guide here
-  -  [Firebase connection authentication](Pulmo-AI\readme.md)
+  -  [Firebase connection authentication](Pulmo-AI/readme.md)
 - Navigate to the Pulmo-AI directory
   ```bash
   python app.py
