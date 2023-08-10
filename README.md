@@ -1,5 +1,5 @@
 
-# <p ><img src="Pulmo-AI\static\assets\img\lungs.ico" alt="Icon" width="30" height="30"> Pulmo AI : Automatic Covid Detection </p> 
+# <p ><img src="Pulmo-AI\static\assets\img\lungs.ico" alt="Icon" width="30" height="30"> Pulmo AI : Automatic Covid & Pneumonia Detection </p> 
 **Pulmo AI**: Step into the world of cutting-edge technology with our web application. Built upon groundbreaking machine learning research, we've harnessed the power of diverse deep learning classification models. Our application is designed to accurately identify Pneumonia and Covid cases from X-ray and CT images, bringing crucial medical insights to your fingertips.
 ### Research & Results
 Gain profound insights into the intricate technical aspects of our research through the pages of our comprehensive research paper. Explore the intricacies of our integrated AI models, delve into our training methodologies, and uncover details about the datasets we utilized by clicking [here](PULMO.pdf)!  
@@ -7,11 +7,11 @@ Gain profound insights into the intricate technical aspects of our research thro
 
 ### Pulmo Overview
 - Walkthrough of the application
-<video width="630" height="300" src="https://github.com/Andrew2077/PulmoAI/blob/main/Pulmo-AI/static/WalkThrough.mp4"></video>
+<video width="630" height="300" src="https://drive.google.com/file/d/13uA50JoRtQJfKJe6d0nL8re0yUlqMXtx/view?usp=sharing"></video>
 
 
 ## Table of Contents
-- [ Pulmo AI : Automatic Covid Detection ](#-pulmo-ai--automatic-covid-detection-)
+- [ Pulmo AI : Automatic Covid \& Pneumonia Detection ](#-pulmo-ai--automatic-covid--pneumonia-detection-)
     - [Research \& Results](#research--results)
     - [Pulmo Overview](#pulmo-overview)
   - [Table of Contents](#table-of-contents)
@@ -28,6 +28,8 @@ Gain profound insights into the intricate technical aspects of our research thro
   - with a stronger GPU the wprediction time will be significantly reduced
 
 ## installation - Conda
+> warning: AI models are not uploaded yet
+
 - clone the repo
   ```bash
   git clone https://github.com/Andrew2077/PulmoAI/tree/main/Pulmo-AI.git
