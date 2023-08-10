@@ -7,7 +7,6 @@ Gain profound insights into the intricate technical aspects of our research thro
 
 ### Pulmo Overview
 - Walkthrough of the application
-<video width="630" height="300" src="https://drive.google.com/file/d/13uA50JoRtQJfKJe6d0nL8re0yUlqMXtx/view?usp=sharing"></video>
 
 
 ## Table of Contents
