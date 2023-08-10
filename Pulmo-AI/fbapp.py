@@ -6,11 +6,11 @@ from argon2 import PasswordHasher
 import json
 ph = PasswordHasher()
 
-storage_loaction = "pulmoai-b3fa7.appspot.comg/images"
 
 with open('Creds/config.json') as f:
     config = json.load(f)
 
+storage_loaction = config['storageBucket']+"/images"
 
 
 # * old method for firebase

@@ -40,6 +40,8 @@ Gain profound insights into the intricate technical aspects of our research thro
   ```bash
   conda activate pulmoai
   ```
+- Follow the Firebase Authentication Guide here
+  -  [Firebase connection authentication](Pulmo-AI\readme.md)
 - Navigate to the Pulmo-AI directory
   ```bash
   python app.py
