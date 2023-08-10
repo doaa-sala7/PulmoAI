@@ -4,6 +4,8 @@ Pulmo AI : Is a web application that is build on a machine learning research, in
 
 ### Research & Results
 Gain profound insights into the intricate technical aspects of our research through the pages of our comprehensive research paper. Explore the intricacies of our integrated AI models, delve into our training methodologies, and uncover details about the datasets we utilized by clicking [here](PULMO.pdf)!  
+  
+
 ### Pulmo Overview
 - Walkthrough of the application
 <video width="630" height="300" src="https://github.com/Andrew2077/PulmoAI/blob/main/Pulmo-AI/static/WalkThrough.mp4"></video>
