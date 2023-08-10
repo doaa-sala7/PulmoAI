@@ -7,6 +7,10 @@ Gain profound insights into the intricate technical aspects of our research thro
 
 ### Pulmo Overview
 - Walkthrough of the application
+  
+
+https://github.com/Andrew2077/PulmoAI/assets/92538925/9afdae6f-deb6-4e9b-a05c-68e278741180
+
 
 
 ## Table of Contents
